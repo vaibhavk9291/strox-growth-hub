@@ -179,6 +179,15 @@ export function Hero() {
             {hero.sub.toUpperCase()}
           </p>
 
+          {/* Scroll to continue indicator */}
+          <div className="flex items-center gap-3 pt-6 md:pt-8 opacity-70 animate-pulse pb-2">
+            <div className="flex items-center justify-center gap-1">
+              <div className="w-5 h-2.5 border-[1.5px] border-accent rounded-full" />
+              <div className="w-1 h-1 bg-accent" />
+            </div>
+            <span className="font-body text-[10px] uppercase tracking-widest text-white/80">Scroll to continue</span>
+          </div>
+
         </div>
       </div>
     </section>
