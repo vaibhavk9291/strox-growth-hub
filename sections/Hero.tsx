@@ -180,12 +180,12 @@ export function Hero() {
           </p>
 
           {/* Scroll to continue indicator */}
-          <div className="flex items-center gap-3 pt-6 md:pt-8 opacity-70 animate-pulse pb-2">
-            <div className="flex items-center justify-center gap-1">
-              <div className="w-5 h-2.5 border-[1.5px] border-accent rounded-full" />
-              <div className="w-1 h-1 bg-accent" />
-            </div>
-            <span className="font-body text-[10px] uppercase tracking-widest text-white/80">Scroll to continue</span>
+          <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce pb-2">
+            <span className="font-body text-[9px] uppercase tracking-[0.3em] text-white">Scroll</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+              <path d="M12 5v14"/>
+              <path d="m19 12-7 7-7-7"/>
+            </svg>
           </div>
 
         </div>
