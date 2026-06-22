@@ -15,29 +15,25 @@ import { Marquee } from "@/sections/Marquee";
 import { Footer } from "@/sections/Footer";
 import { content } from "@/content";
 
-import { EntryWrapper } from "@/components/EntryWrapper";
-
 export default function Home() {
 
   return (
-    <EntryWrapper>
-      <main className="w-full relative">
-        <Nav />
-        <Hero />
-        <ClientLogos />
-        <About />
-        <WhyChooseUs />
-        <Work />
-        <Impact />
-        <Services />
-        <HowWeWork />
-        <Team />
-        <Testimonials />
-        <FAQ />
-        <Insights />
-        <Marquee />
-        <Footer />
-      </main>
-    </EntryWrapper>
+    <main className="w-full relative">
+      <Nav />
+      <Hero />
+      <ClientLogos />
+      <About />
+      <WhyChooseUs />
+      <Work />
+      <Impact />
+      <Services />
+      <HowWeWork />
+      <Team />
+      <Testimonials />
+      <FAQ />
+      <Insights />
+      <Marquee />
+      <Footer />
+    </main>
   );
 }

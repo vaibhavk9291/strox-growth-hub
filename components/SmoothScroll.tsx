@@ -30,8 +30,17 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       ScrollTrigger.refresh();
     }, 500);
 
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
     return () => {
       clearTimeout(timeout);
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
       lenis.destroy();
       gsap.ticker.remove((time) => {
         lenis.raf(time * 1000);

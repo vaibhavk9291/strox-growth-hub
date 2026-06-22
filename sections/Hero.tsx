@@ -83,24 +83,25 @@ export function Hero() {
         {hero.image && (
           <div className="absolute inset-0 z-0 pointer-events-none bg-bg">
             
-            {/* Desktop image — visible ≥768px */}
-            <Image 
-              src="/founders3.png"
-              alt="Intellobyte Founders"
-              fill
-              className="hero-bg-image hidden md:block object-cover object-[center_bottom] grayscale will-change-transform"
-              priority
-              sizes="100vw"
-            />
-            {/* Mobile image — visible <768px */}
-            <Image 
-              src="/founders-mobile.png"
-              alt="Intellobyte Founders"
-              fill
-              className="hero-bg-image block md:hidden object-cover object-[center_20%] grayscale will-change-transform"
-              priority
-              sizes="100vw"
-            />
+            {/* Responsive Image — <picture> ensures only one file is downloaded */}
+            <picture className="hero-bg-image absolute inset-0 w-full h-full will-change-transform">
+              {/* Mobile: portrait crop (loaded only on screens ≤767px) */}
+              {hero.imageMobile && (
+                <source
+                  media="(max-width: 767px)"
+                  srcSet={hero.imageMobile}
+                  type="image/png"
+                />
+              )}
+              {/* Desktop: landscape crop (default) */}
+              <img
+                src={hero.image}
+                alt="Intellobyte Founders"
+                className="w-full h-full object-cover object-[center_20%] md:object-[center_bottom] grayscale"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </picture>
             
             {/* Soft gradient scrim for text legibility, hidden on load */}
             <div className="hero-scrim absolute inset-0 pointer-events-none">
