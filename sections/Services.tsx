@@ -3,7 +3,6 @@
 import { content } from "@/content";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { useReveal } from "@/lib/gsap";
-import { GlowCard } from "@/components/ui/spotlight-card";
 import Image from "next/image";
 
 export function Services() {
@@ -16,7 +15,7 @@ export function Services() {
         {/* Phase 4: GSAP ScrollTrigger - pin section, stack cards */}
         <div ref={cardsRef} className="w-full flex flex-col gap-16 md:gap-24">
           {services.cards.map((card, idx) => (
-            <GlowCard 
+            <div 
               key={idx} 
               className="w-full bg-surface border-none rounded-xl p-8 md:p-12 lg:p-20 flex flex-col lg:flex-row gap-12 lg:gap-24"
             >
@@ -50,7 +49,7 @@ export function Services() {
                   ))}
                 </ul>
               </div>
-            </GlowCard>
+            </div>
           ))}
         </div>
       </div>
